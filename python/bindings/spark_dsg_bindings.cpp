@@ -37,6 +37,7 @@
 #include <spark_dsg/dynamic_scene_graph.h>
 #include <spark_dsg/node_attributes.h>
 #include <spark_dsg/scene_graph_utilities.h>
+#include <spark_dsg/graph_binary_serialization.h>
 
 #include <pybind11/eigen.h>
 #include <pybind11/pybind11.h>
@@ -463,4 +464,5 @@ PYBIND11_MODULE(_dsg_bindings, module) {
 #undef MAKE_SPECIALZIED_NODE_ADD
 
   module.def("compute_ancestor_bounding_box", &computeAncestorBoundingBox);
+  module.def("read_graph", &spark_dsg::readGraph);  // Adds ability to read from a DsgUpdate with Python
 }
